@@ -1,22 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='appPoll'>
 <head>
     <meta charset="utf-8"/>
     <title>AngularJS Poll - MathOS</title>
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="app/app.css">
+	<style>
+		table {
+			text-align:center;
+		}
+	</style>
 </head>
 <body>
 	<div>
 		<header>            
 			<h1>AngularJS Poll - MathOS</h1>
 		</header>
-		<div>
-		
+		<div ng-controller="MainController">
+			<table>
+				<tr>
+					<th>
+						Poll
+					</th>
+					<th>
+						A
+					</th>
+					<th>
+						B
+					</th>
+					<th>
+						C
+					</th>                   
+				</tr>
+				<tr>
+					<td>
+						Glasaj
+					</td>
+					<td>
+						<button ng-click="vote('A')">A</button>
+					</td>
+					<td>
+						<button ng-click="vote('B')">B</button>
+					</td>
+					<td>
+						<button ng-click="vote('C')">C</button>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Rezultati
+					</td>
+					<td>
+						{{counter.A}}
+					</td>
+					<td>
+						{{counter.B}}
+					</td>
+					<td>
+						{{counter.C}}
+					</td>
+				</tr>
+			</table>
 		</div>
 	</div>
     <script src="app/angular.js"></script>
     <script src="app/angular-route.min.js"></script>
-    <script src="app/app.module.js"></script>     
+    <script src="app/app.module.js"></script>
+	<script src="app/poll/poll.controller.js"></script>   
 </body>
 </html>
