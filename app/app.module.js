@@ -1,1 +1,4 @@
-angular.module('appPoll', []);
+(function (angular) {
+	'use strict';
+	angular.module('appPoll', []);
+})(angular);

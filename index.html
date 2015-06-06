@@ -5,11 +5,6 @@
     <title>AngularJS Poll - MathOS</title>
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="app/app.css">
-	<style>
-		table {
-			text-align:center;
-		}
-	</style>
 </head>
 <body>
 	<div>
@@ -20,35 +15,35 @@
 			<table>
 				<tr>
 					<th>
-						Poll
+						Poll:
 					</th>
 					<th>
-						A
+						Barcelona
 					</th>
 					<th>
-						B
+						-
 					</th>
 					<th>
-						C
+						Juventus
 					</th>                   
 				</tr>
 				<tr>
 					<td>
-						Glasaj
+						Vote
 					</td>
 					<td>
-						<button ng-click="vote('A')">A</button>
+						<button ng-click="vote('A')">1</button>
 					</td>
 					<td>
-						<button ng-click="vote('B')">B</button>
+						<button ng-click="vote('B')">X</button>
 					</td>
 					<td>
-						<button ng-click="vote('C')">C</button>
+						<button ng-click="vote('C')">2</button>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						Rezultati
+						Total
 					</td>
 					<td>
 						{{counter.A}}
@@ -60,12 +55,27 @@
 						{{counter.C}}
 					</td>
 				</tr>
+				<tr>
+					<td>
+						Stats
+					</td>
+					<td>
+						{{calculated.A | statistics}}
+					</td>
+					<td>
+						{{calculated.B | statistics}}
+					</td>
+					<td>
+						{{calculated.C | statistics}}
+					</td>
+				</tr>
 			</table>
 		</div>
 	</div>
     <script src="app/angular.js"></script>
     <script src="app/angular-route.min.js"></script>
     <script src="app/app.module.js"></script>
-	<script src="app/poll/poll.controller.js"></script>   
+	<script src="app/poll/poll.controller.js"></script>
+	<script src="app/components/filters/statistics.filter.js"></script>  
 </body>
 </html>
