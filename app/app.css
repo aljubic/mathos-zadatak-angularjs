@@ -1,8 +1,51 @@
-.table , td{
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+body {
+	background-color: lightgray;
+}
+
+header {
+	background-color: lightgreen;
+	text-align: center;
+	padding: 20px;
+}
+
+.table, td{
 	border: 1px solid black;
 	text-align: center;
+	background-color: #E6EBFA;
+	margin: auto;
+	padding: 10px;
+}
+
+.table2 {
+	margin: auto;
+	width: 100%;
+}
+
+th {
+	font-size: 20px;
 }
 
 .answer-button {
 	width: 100%;
+	background-color: lightgreen;
+	border-radius: 5px;
+	border: 1px solid black;
+}
+
+.back-button {
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid black;
+	background-color: lightblue;
+}
+
+a {
+	text-decoration: none;
+	color: blue;
 }

@@ -8,13 +8,16 @@
 				$scope.percent=0;
 				
 				$scope.vote = function(id) {
-					for(var i in $scope.selectedQuestion.answers)
+					for(var i in $scope.selectedQuestion.answers){
 					 	if ($scope.selectedQuestion.answers[i].id===id){
 					 		$scope.selectedQuestion.answers[i].count+=1;
 							$scope.sum+=1;
-							$scope.percent=$scope.selectedQuestion.answers[i].count/$scope.sum;
 					 	};
-						
+					};
+					
+					for(var i in $scope.selectedQuestion.answers){
+						$scope.selectedQuestion.answers[i].percent=$scope.selectedQuestion.answers[i].count/$scope.sum;
+					};
 				};
 				
 				function fetch() {
