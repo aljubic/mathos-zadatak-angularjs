@@ -1,0 +1,13 @@
+<div class="container">
+	<table class="table">
+	<tr>
+		<th>Questions</th> 
+	</tr>
+	<tr ng-if="main.view === false" ng-repeat="question in questions">
+		<td class="question"><a href="#question/{{question.id}}/" title="Question" ng-click="select(question)">{{question.question}}</a> <br>({{question.description}})</td>
+	</tr>
+	</table>
+	<div ng-if="main.view === true">
+		<answers selected-question="selectedQuestion"></answers>
+	</div>
+</div>

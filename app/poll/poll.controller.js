@@ -1,26 +1,28 @@
 (function (angular) {
 	'use strict';
 	angular.module('appPoll')
-		.controller('MainController', ['$scope',
-			function ($scope) {
-				$scope.counter = {
-					A : 0,
-					B : 0,
-					C : 0
-				}
-				$scope.calculated = {
-					A : 0,
-					B : 0,
-					C : 0
-				}
-				
-				$scope.vote = function (choice) {
-					$scope.counter[choice] += 1;
-					var sum = $scope.counter.A+$scope.counter.B+$scope.counter.C;
-					$scope.calculated.A = $scope.counter.A / sum;
-					$scope.calculated.B = $scope.counter.B / sum;
-					$scope.calculated.C = $scope.counter.C / sum;
+		.controller('MainController', ['$scope','pollService',
+			function ($scope, pollService) {
+				this.view=false;
+				$scope.questions = [];
+				$scope.selectedQuestion = [];
+
+          		this.close = function () {
+          			this.view=false;
+          			$scope.selectedQuestion=[];
+          		};
+
+				$scope.select = function(question) {
+					this.view=true;
+					$scope.selectedQuestion=question;
 				};
+
+				function fetch(){
+					pollService.fetch().success(function (data) {
+						$scope.questions = data.item;
+					});
+				};
+				fetch();
 				
 			}]);
 })(angular);

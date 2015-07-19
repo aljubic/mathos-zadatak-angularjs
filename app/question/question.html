@@ -1,0 +1,7 @@
+<div class="container">	
+	<p class="question-title">{{selectedQuestion.question}}<br><small>({{selectedQuestion.description}})</small> </p>
+	<div ng-controller="QuestionController">
+		<answers selected-question="selectedQuestion" selected-question-click="vote(id)" percent="percent"></answers>
+	</div>
+	<a class="back-button"href="#/" ng-click="main.close()" title="Back">Back</a>
+</div>

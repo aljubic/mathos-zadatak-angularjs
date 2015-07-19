@@ -1,0 +1,14 @@
+<div>
+<table class="table" >
+	<tr>
+		<th> </th>
+		<th>Votes</th> 
+		<th>Percent</th>
+	</tr>
+	<tr ng-repeat="selectedAnswer in selectedQuestion.answers">
+		<td><button class="answer-button" ng-click="selectedQuestionClick(selectedAnswer)">{{selectedAnswer.answer}}</button></td>
+		<td>{{selectedAnswer.count}}</td> 
+		<td>{{percent | statistics}}</td>
+	</tr>
+</table>
+</div>

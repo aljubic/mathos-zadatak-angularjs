@@ -5,7 +5,7 @@
 			if (input !== undefined && input !== 0) {
 				return (input*100).toFixed(2)+"%";
 			}
-			return 'NaN';
+			return ' ';
 		};
 	});	
 })(angular);

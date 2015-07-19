@@ -11,71 +11,18 @@
 		<header>            
 			<h1>AngularJS Poll - MathOS</h1>
 		</header>
-		<div ng-controller="MainController">
-			<table>
-				<tr>
-					<th>
-						Poll:
-					</th>
-					<th>
-						Barcelona
-					</th>
-					<th>
-						-
-					</th>
-					<th>
-						Juventus
-					</th>                   
-				</tr>
-				<tr>
-					<td>
-						Vote
-					</td>
-					<td>
-						<button ng-click="vote('A')">1</button>
-					</td>
-					<td>
-						<button ng-click="vote('B')">X</button>
-					</td>
-					<td>
-						<button ng-click="vote('C')">2</button>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Total
-					</td>
-					<td>
-						{{counter.A}}
-					</td>
-					<td>
-						{{counter.B}}
-					</td>
-					<td>
-						{{counter.C}}
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Stats
-					</td>
-					<td>
-						{{calculated.A | statistics}}
-					</td>
-					<td>
-						{{calculated.B | statistics}}
-					</td>
-					<td>
-						{{calculated.C | statistics}}
-					</td>
-				</tr>
-			</table>
-		</div>
+		<div ng-view="">
+           
+        </div>
 	</div>
     <script src="app/angular.js"></script>
     <script src="app/angular-route.min.js"></script>
     <script src="app/app.module.js"></script>
 	<script src="app/poll/poll.controller.js"></script>
-	<script src="app/components/filters/statistics.filter.js"></script>  
+	<script src="app/components/filters/statistics.filter.js"></script>
+	<script src="app/app.config.js"></script>
+	<script src="app/components/directives/answers/answers.directive.js"></script>
+	<script src="app/poll/poll.service.js"></script>
+	<script src="app/question/question.controller.js"></script>
 </body>
 </html>
